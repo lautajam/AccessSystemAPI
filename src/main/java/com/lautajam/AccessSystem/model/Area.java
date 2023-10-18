@@ -28,16 +28,23 @@ public class Area {
     @Column(length = 100, nullable = false, name = "area_description")
     private String description;
 
-    @Column(length = 200, name = "area_roles")
-    private String roles;
+    @ManyToMany
+    @JoinTable(
+            name = "area_roles",
+            joinColumns = @JoinColumn(name = "area_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private List<Rol> roles;
 
-    @Column(length = 200, name = "area_buildings")
-    private String buildings;
+    @ManyToMany(mappedBy = "areas")
+    private List<Building> buildings;
 
     public Area() {
     }
 
-    public Area(String name, int telephone, String email, String description, String roles, String buildings) {
+    public Area(long id, String name, int telephone, String email, String description,
+                List<Rol> roles, List<Building> buildings) {
+        this.id = id;
         this.name = name;
         this.telephone = telephone;
         this.email = email;

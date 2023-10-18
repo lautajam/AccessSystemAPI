@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "buildings")
 @Getter @Setter
@@ -20,16 +22,26 @@ public class Building {
     @Column(length = 40, nullable = false, name = "building_address")
     private String address;
 
-    @Column(length = 200, name = "building_areas")
-    private String areas;
+    @ManyToMany
+    @JoinTable(
+        name = "building_areas",
+        joinColumns = @JoinColumn(name = "building_id"),
+        inverseJoinColumns = @JoinColumn(name = "area_id")
+    )
+    private List<Area> areas;
 
-    @Column(length = 200, name = "building_roles")
-    private String roles;
+    @ManyToMany
+    @JoinTable(
+            name = "building_roles",
+            joinColumns = @JoinColumn(name = "building_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private List<Rol> roles;
 
     public Building() {
     }
 
-    public Building(String name, String address, String areas, String roles) {
+    public Building(String name, String address, List<Area> areas, List<Rol> roles) {
         this.name = name;
         this.address = address;
         this.areas = areas;

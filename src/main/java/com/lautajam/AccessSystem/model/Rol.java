@@ -28,16 +28,17 @@ public class Rol {
     @OneToMany(mappedBy = "employee_rol")
     private List<Employee> employees;
 
-    @Column(length = 200, name = "rol_areas")
-    private String areas;
+   @ManyToMany(mappedBy = "roles")
+    private List<Area> areas;
 
-    @Column(length = 200, name = "rol_buildings")
-    private String buildings;
+    @ManyToMany(mappedBy = "roles")
+    private List<Building> buildings;
 
     public Rol() {
     }
 
-    public Rol(long id, String name, String description, double salary, List<Employee> employees, String areas, String buildings) {
+    public Rol(long id, String name, String description, double salary,
+               List<Employee> employees, List<Area> areas, List<Building> buildings) {
         this.id = id;
         this.name = name;
         this.description = description;
