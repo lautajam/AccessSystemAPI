@@ -20,6 +20,7 @@ public class Employee {
     @Column(name = "employee_id")
     private long id;
 
+    @Column(length = 20, nullable = false, name = "employee_name")
     private String name;
 
     @Column(length = 20, nullable = false, name = "employee_surname")
