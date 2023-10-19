@@ -6,6 +6,13 @@ import lombok.Setter;
 
 import java.util.List;
 
+/**
+ * The class Role represents a role within an organization or access system.
+ * Each instance of this class corresponds to a role and stores information about its name,
+ * description, salary, the employees that perform that role, the related areas and
+ * the associated buildings, description, salary, the employees that perform that role,
+ * the related areas and the associated buildings.
+*/
 @Entity
 @Table(name = "roles")
 @Getter @Setter
@@ -34,9 +41,22 @@ public class Rol {
     @ManyToMany(mappedBy = "roles")
     private List<Building> buildings;
 
+    /**
+     * Empty constructor for Rol class.
+     */
     public Rol() {
     }
 
+    /**
+     * Constructor for Rol class.
+     * @param id The id of the role.
+     * @param name The name of the role.
+     * @param description The description of the role.
+     * @param salary The salary of the role.
+     * @param employees The employees that perform the role.
+     * @param areas The list of areas related to the role.
+     * @param buildings The list of buildings related to the role.
+     */
     public Rol(long id, String name, String description, double salary,
                List<Employee> employees, List<Area> areas, List<Building> buildings) {
         this.id = id;

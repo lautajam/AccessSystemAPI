@@ -4,6 +4,12 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * The Employee class represents an employee in the access system.
+ * Each instance of this class corresponds to an employee and stores* Information
+ * about the employee's first name, last name, employee number, phone number, ID number,
+ * email address, and the role he/she plays in the organization.
+ */
 @Entity
 @Table(name = "employees")
 @Getter @Setter
@@ -13,7 +19,6 @@ public class Employee {
     @GeneratedValue (strategy = GenerationType.SEQUENCE)
     @Column(name = "employee_id")
     private long id;
-
 
     private String name;
 
@@ -36,9 +41,22 @@ public class Employee {
     @JoinColumn(name = "rol_id")
     private Rol employee_rol;
 
+    /**
+     * Empty constructor for the Employee class.
+     */
     public Employee() {
     }
 
+    /**
+     * Constructor for the Employee class.
+     * @param name The name of the employee.
+     * @param surname The surname of the employee.
+     * @param employee_number The employee number of the employee.
+     * @param telephone The telephone number of the employee.
+     * @param dni The ID number of the employee.
+     * @param email The e-mail of the employee.
+     * @param employee_rol The role of the employee.
+     */
     public Employee(String name, String surname, long employee_number, int telephone, int dni, String email, Rol employee_rol) {
         this.name = name;
         this.surname = surname;

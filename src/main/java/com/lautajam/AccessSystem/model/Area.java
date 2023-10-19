@@ -6,6 +6,12 @@ import lombok.Setter;
 
 import java.util.List;
 
+/**
+ * The class Area represents an area in the company (administrative, technological, etc.).
+ * Each instance of this class corresponds to an area and stores information about its name,
+ * telephone, e-mail, description, the roles that exist within the area and the buildings
+ * where it is located,
+ */
 @Entity
 @Table(name = "areas")
 @Getter @Setter
@@ -39,9 +45,21 @@ public class Area {
     @ManyToMany(mappedBy = "areas")
     private List<Building> buildings;
 
+    /*
+     * Empty constructor for the Area class.
+     */
     public Area() {
     }
 
+    /**
+     * Constructor for the Area class.
+     * @param name The name of the area.
+     * @param telephone The telephone number of the area.
+     * @param email The e-mail of the area.
+     * @param description The description of the area.
+     * @param roles The list of roles associated with the area.
+     * @param buildings The list of buildings where the area is located.
+     */
     public Area(long id, String name, int telephone, String email, String description,
                 List<Rol> roles, List<Building> buildings) {
         this.id = id;
