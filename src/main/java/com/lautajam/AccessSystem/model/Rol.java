@@ -1,5 +1,6 @@
 package com.lautajam.AccessSystem.model;
 
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,7 +36,7 @@ public class Rol {
     @OneToMany(mappedBy = "employee_rol")
     private List<Employee> employees;
 
-   @ManyToMany(mappedBy = "roles")
+    @ManyToMany(mappedBy = "roles")
     private List<Area> areas;
 
     @ManyToMany(mappedBy = "roles")

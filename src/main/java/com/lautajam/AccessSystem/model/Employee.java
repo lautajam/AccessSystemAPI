@@ -1,5 +1,9 @@
 package com.lautajam.AccessSystem.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -66,5 +70,17 @@ public class Employee {
         this.dni = dni;
         this.email = email;
         this.employee_rol = employee_rol;
+    }
+
+    /**
+     * Get the id of the employee's role. This method is used to avoid infinite recursion
+     * @return The id of the employee's role
+     */
+    @JsonProperty("employee_rol")
+    public Long getEmployeeRolId() {
+        if (employee_rol != null) {
+            return employee_rol.getId();
+        }
+        return null;
     }
 }

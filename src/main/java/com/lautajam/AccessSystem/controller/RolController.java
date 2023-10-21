@@ -25,9 +25,10 @@ public class RolController {
     /**
      * Creates a new rol in the database.
      *
-     * @param rol The rol to be created.
-     * @return A CREATED response with the created rol if the rol was created successfully.
-     *         Otherwise, it returns an INTERNAL_SERVER_ERROR response.
+     * @param rol The Rol object to be created.
+     * @return A ResponseEntity with the operation status:
+     *         - HttpStatus.CREATED (201) if the rol is successfully created.
+     *         - HttpStatus.INTERNAL_SERVER_ERROR (500) if an error occurs during the operation.
      */
     @PostMapping("/createRol")
     public ResponseEntity<String> createRol(@RequestBody Rol rol){
@@ -42,7 +43,9 @@ public class RolController {
     /**
      * Returns all the roles in the database.
      *
-     * @return An OK response with the list of roles if there are roles in the database.
+     * @return A ResponseEntity with the list of roles if there are roles in the database.
+     *         - HttpStatus.OK (200) if there are roles available.
+     *         - HttpStatus.NO_CONTENT (204) if there are no roles in the database.
      */
     @GetMapping("/getAll")
     @ResponseBody
@@ -60,8 +63,9 @@ public class RolController {
      * Returns a rol by its id if it exists in the database.
      *
      * @param rol_id The id of the rol to be returned.
-     * @return An OK response with the rol if it exists in the database.
-     *         Otherwise, it returns a NOT_FOUND response.
+     * @return A ResponseEntity with the rol if it exists in the database.
+     *         - HttpStatus.OK (200) if the rol is found.
+     *         - HttpStatus.NOT_FOUND (404) if the rol does not exist.
      */
     @GetMapping("/getRolById/{rol_id}")
     public ResponseEntity<Rol> getRolById(@PathVariable long rol_id){
@@ -77,8 +81,10 @@ public class RolController {
      * Updates an existing role.
      *
      * @param rol The role to be updated.
-     * @return An OK response if the role was updated successfully.
-     *         Otherwise, it returns an INTERNAL_SERVER_ERROR response.
+     * @return A ResponseEntity with the operation status:
+     *         - HttpStatus.OK (200) if the role is updated successfully.
+     *         - HttpStatus.NOT_FOUND (404) if the role to be updated is not found.
+     *         - HttpStatus.INTERNAL_SERVER_ERROR (500) if an error occurs during the operation.
      */
     @PutMapping("/updateRol")
     public ResponseEntity<Rol> updateRol(@RequestBody Rol rol){
@@ -100,9 +106,10 @@ public class RolController {
      * Deletes a rol by its id.
      *
      * @param rol_id The id of the rol to be deleted.
-     * @return If the rol not exists, it returns a NOT_FOUND response.
-     *          A NO_CONTENT response if the rol wass deleted successfully.
-     *          Otherwise, it returns an INTERNAL_SERVER_ERROR response.
+     * @return A ResponseEntity with the operation status:
+     *         - HttpStatus.NOT_FOUND (404) if the rol to be deleted is not found.
+     *         - HttpStatus.NO_CONTENT (204) if the rol is deleted successfully.
+     *         - HttpStatus.INTERNAL_SERVER_ERROR (500) if an error occurs during the operation.
      */
     @DeleteMapping("/deleteRol/{rol_id}")
     public ResponseEntity<String> deleteRol(@PathVariable long rol_id){
