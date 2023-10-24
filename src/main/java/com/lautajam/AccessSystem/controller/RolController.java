@@ -30,7 +30,7 @@ public class RolController {
      *         - HttpStatus.CREATED (201) if the rol is successfully created.
      *         - HttpStatus.INTERNAL_SERVER_ERROR (500) if an error occurs during the operation.
      */
-    @PostMapping("/createRol")
+    @PostMapping("/create")
     public ResponseEntity<String> createRol(@RequestBody Rol rol){
         try {
             rolService.saveRol(rol);
