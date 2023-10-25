@@ -1,0 +1,541 @@
+{
+	"info": {
+		"_postman_id": "9baa7bca-0c64-4050-8904-19fd3a032273",
+		"name": "AccsessSystemAPI_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30379007"
+	},
+	"item": [
+		{
+			"name": "CRUD",
+			"item": [
+				{
+					"name": "Rol",
+					"item": [
+						{
+							"name": "Crea a rol",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Empleado publico\",\r\n    \"description\": \"Alto ñoqui del 29\",\r\n    \"salary\": 29,\r\n    \"employes\": [\r\n        \r\n    ],\r\n    \"areas\": [\r\n\r\n    ],\r\n    \"buildings\": [\r\n\r\n    ]\r\n\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/rol/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"rol",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show all roles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/rol/getAll",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"rol",
+										"getAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show rol by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/rol/getRolById/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"rol",
+										"getRolById",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update rol",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Boss\",\r\n    \"description\": \"El jefe papa que mas queres\",\r\n    \"salary\": 2800000.0,\r\n    \"employees\": [],\r\n    \"areas\": [],\r\n    \"buildings\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/rol/updateRol",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"rol",
+										"updateRol"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete rol by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/rol/deleteRol/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"rol",
+										"deleteRol",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Employee",
+					"item": [
+						{
+							"name": "Create a employee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Juan\",\r\n    \"surname\": \"Perez\",\r\n    \"employee_number\": 23,\r\n    \"telephone\": 44332211,\r\n    \"email\": \"perezjuanes@gmail.com\",\r\n    \"employee_rol\":  {\r\n        \"id\": 3\r\n    } \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/employee/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"employee",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show all employees",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/employee/getAll",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"employee",
+										"getAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get employee by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/employee/get/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"employee",
+										"get",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update employee",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"Juan\",\r\n    \"surname\": \"Perez\",\r\n    \"employee_number\": 23,\r\n    \"telephone\": 44332211,\r\n    \"dni\": 0,\r\n    \"email\": \"perezjuanes@gmail.com\",\r\n    \"employee_rol\": {\r\n        \"id\": 2\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/employee/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"employee",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete employee by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/employee/delete/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"employee",
+										"delete",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Area",
+					"item": [
+						{
+							"name": "Create a area",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"aREA RE PIOLA\",\r\n  \"telephone\": 33441232,\r\n  \"email\": \"mail@dominio.com\",\r\n  \"description\": \"Descripción del área re piola\",\r\n  \"roles\": [\r\n      {\"id\": 3}\r\n  ],\r\n  \"buildings\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/area/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"area",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show all areas",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/area/getAll",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"area",
+										"getAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get area by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/area/get/153",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"area",
+										"get",
+										"153"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete area by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/area/delete/153",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"area",
+										"delete",
+										"153"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Area",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 153,\r\n  \"name\": \"aaaa\",\r\n  \"telephone\": 33441232,\r\n  \"email\": \"mail@perro.com\",\r\n  \"description\": \"Descripcion del área re piola\",\r\n  \"roles\": [\r\n      {\"id\": 3}\r\n  ],\r\n  \"buildings\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/area/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"area",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Building",
+					"item": [
+						{
+							"name": "Create a building",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Rosa del viento\",\r\n  \"address\": \"Surich 123, esquina norte\",\r\n  \"email\": \"rosadelviento@empresapepito.com\",\r\n  \"description\": \"Descripción del edifcio re piola\",\r\n  \"areas\": [\r\n      {\"id\": 202}\r\n  ],\r\n  \"roles\": [\r\n      {\"id\": 3}\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/building/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"building",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show all buildings",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/building/getAll",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"building",
+										"getAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get building by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/building/get/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"building",
+										"get",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete building by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/building/delete/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"building",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Area Copy",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Rosa del viento\",\r\n  \"address\": \"Surich 123, esquina norte\",\r\n  \"email\": \"rosadelviento@empresapepito.com\",\r\n  \"description\": \"Descripción del edifcio re piola\",\r\n  \"areas\": [\r\n  ],\r\n  \"roles\": [\r\n      {\"id\": 3}\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/building/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"building",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
