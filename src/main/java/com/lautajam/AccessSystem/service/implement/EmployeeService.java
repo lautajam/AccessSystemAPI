@@ -11,6 +11,11 @@ import java.util.List;
 @Service
 public class EmployeeService implements IEmployeeService {
 
+    /**
+     * The employee repository to be injected. This repository provides access to the database.
+     * This repository is used for tasks such as creating, updating, and retrieving employee
+     * information from the database.
+     */
     @Autowired
     private IEmployeeRepository employeeRepository;
 

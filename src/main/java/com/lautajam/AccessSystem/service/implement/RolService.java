@@ -12,6 +12,11 @@ import java.util.List;
 @Service
 public class RolService implements IRolService {
 
+    /**
+     * The rol repository to be injected. This repository provides access to the database.
+     * This repository is used for tasks such as creating, updating, and retrieving rol
+     * information from the database.
+     */
     @Autowired
     private IRolRepository rolRepository;
 

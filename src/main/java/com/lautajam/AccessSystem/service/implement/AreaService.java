@@ -13,6 +13,11 @@ import java.util.stream.Collectors;
 @Service
 public class AreaService implements IAreaService {
 
+    /**
+     * The area repository to be injected. This repository provides access to the database.
+     * This repository is used for tasks such as creating, updating, and retrieving area
+     * information from the database.
+     */
     @Autowired
     IAreaRepository areaRepository;
 
